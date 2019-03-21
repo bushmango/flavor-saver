@@ -1,0 +1,33 @@
+{
+  "name": "flavor-saver",
+  "version": "0.10.0",
+  "description": "Typescript Typed Local Storage Helpers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/node": "^11.11.0",
+    "lodash": "^4.17.11",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "typescript": "^3.3.3333",
+    "moment": "^2.24.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bushmango/flavor-saver.git"
+  },
+  "author": "Steve Bushman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bushmango/flavor-saver/issues"
+  },
+  "homepage": "https://github.com/bushmango/flavor-saver#readme"
+}

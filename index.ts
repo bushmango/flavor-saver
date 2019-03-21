@@ -6,6 +6,8 @@ function log(...x) {
   }
 }
 
+type ArrayOfKeys<T> = Array<keyof T>
+
 export interface IFlavorSaver<T> {
   localStorageKey: string
   // fields: [keyof T]
@@ -16,7 +18,7 @@ export interface IFlavorSaver<T> {
 export function create<T>(
   key: string,
   version: string,
-  fields?: [keyof T]
+  fields?: ArrayOfKeys<T>
 ): IFlavorSaver<T> {
   const localStorageKey = key + ':' + version
   return {
@@ -30,7 +32,7 @@ export function create<T>(
   }
 }
 
-function save<T>(t: T, localStorageKey, fields?: [keyof T]) {
+function save<T>(t: T, localStorageKey, fields?: ArrayOfKeys<T>) {
   if (typeof localStorage !== 'undefined') {
     let picked = t
     if (fields) {
@@ -40,7 +42,7 @@ function save<T>(t: T, localStorageKey, fields?: [keyof T]) {
   }
 }
 
-function restore<T>(t: T, localStorageKey, fields?: [keyof T]) {
+function restore<T>(t: T, localStorageKey, fields?: ArrayOfKeys<T>) {
   if (typeof localStorage !== 'undefined') {
     try {
       let stored = localStorage.getItem(localStorageKey)

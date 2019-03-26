@@ -59,4 +59,5 @@ function restore<T>(t: T, localStorageKey, fields?: ArrayOfKeys<T>) {
       log('Error loading state from localStorage: ' + localStorageKey)
     }
   }
+  return _.assign({}, t)
 }

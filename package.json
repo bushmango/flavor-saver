@@ -6,9 +6,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@types/node": "^11.11.0",
-    "lodash": "^4.17.11",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",

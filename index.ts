@@ -18,7 +18,7 @@ export interface IFlavorSaver<T> {
 export function create<T>(
   key: string,
   version: string,
-  fields?: ArrayOfKeys<T>
+  fields: ArrayOfKeys<T> = null
 ): IFlavorSaver<T> {
   const localStorageKey = key + ':' + version
   return {
@@ -35,7 +35,7 @@ export function create<T>(
 function save<T>(t: T, localStorageKey, fields?: ArrayOfKeys<T>) {
   if (typeof localStorage !== 'undefined') {
     let picked = t
-    if (fields) {
+    if (fields && _.isArray(fields)) {
       picked = _.pick(t, fields)
     }
     localStorage.setItem(localStorageKey, JSON.stringify(picked))
@@ -50,7 +50,7 @@ function restore<T>(t: T, localStorageKey, fields?: ArrayOfKeys<T>) {
         // Get only picked fields
         let parsed = JSON.parse(stored)
         let picked = parsed
-        if (fields) {
+        if (fields && _.isArray(fields)) {
           picked = _.pick(parsed, fields)
         }
         return _.assign({}, t, picked)

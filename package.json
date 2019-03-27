@@ -1,6 +1,6 @@
 {
   "name": "flavor-saver",
-  "version": "0.12.3",
+  "version": "0.13.0",
   "description": "Typescript Typed Local Storage Helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

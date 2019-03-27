@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "declaration": true,
+    "out": "index.js",
     "outDir": "dist",
     "target": "es5",
     "module": "commonjs",

@@ -1,4 +1,4 @@
-import { _ } from '../imports/lodash'
+import { _ } from './imports/lodash'
 
 function log(...x) {
   if (console && console.log) {
